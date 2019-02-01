@@ -1,13 +1,11 @@
 import 'jsdom-global/register';
 import React from 'react';
-import assert from 'assert';
 import { mount, shallow } from 'enzyme';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { Button, FormRow } from 'react-gears';
 
 import FormComponent from '../../components/FormComponent';
-import FeedbackStore from '../../stores/FeedbackStore';
 
 describe('<FormComponent />', () => {
 
@@ -20,7 +18,11 @@ describe('<FormComponent />', () => {
         stores: {
           feedbackStore: {
             updateName: sinon.spy(),
-            updateComment: sinon.spy()
+            updateComment: sinon.spy(),
+            submitMessage: {
+              status: '',
+              text: ''
+            }
           }
         }
       }
@@ -29,7 +31,6 @@ describe('<FormComponent />', () => {
     }
 
   );
-
 
 afterEach(() => {
   sandbox.restore();

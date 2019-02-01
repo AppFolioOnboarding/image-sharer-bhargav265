@@ -6,7 +6,6 @@ import Header from '../../components/Header';
 import App from '../../components/App';
 import FormComponent from "../../components/FormComponent";
 
-
 describe('<App />', () => {
   it('should render app contents', () => {
     const appComponent = shallow(<App />);
